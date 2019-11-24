@@ -38,30 +38,52 @@ require('normalize.css');
 
 const images = {
   abobrinha: require('../assets/abobrinha.gif'),
+  angular: require('../assets/angular.png'),
+  arpanet: require('../assets/arpanet.jpg'),
   balao: require('../assets/balao.gif'),
+  brendan: require('../assets/brendan.jpg'),
   bug: require('../assets/bug.gif'),
+  chrome: require('../assets/chrome.png'),
   city: require('../assets/city.jpg'),
   com_framework: require('../assets/com-framework.gif'),
   comendo: require('../assets/comendo.gif'),
+  darpa: require('../assets/darpa.jpg'),
   dente: require('../assets/dente.gif'),
   dinheiro: require('../assets/dinheiro.gif'),
+  ecma: require('../assets/ecma.png'),
+  eisenhower: require('../assets/eisenhower.jpg'),
+  electron: require('../assets/electron.png'),
+  firefox: require('../assets/firefox.png'),
   hipnose: require('../assets/hipnose.gif'),
+  html: require('../assets/html.png'),
+  java: require('../assets/java.png'),
+  javascript: require('../assets/javascript.png'),
+  jim: require('../assets/jim.jpg'),
   kat: require('../assets/kat.gif'),
   lava_olhos: require('../assets/lava-olhos.gif'),
   lingua: require('../assets/lingua.gif'),
   macarena: require('../assets/macarena.gif'),
   markdown: require('../assets/markdown.png'),
+  mocha: require('../assets/mocha.png'),
   monstro: require('../assets/monstro.gif'),
+  mosaic: require('../assets/mosaic.jpg'),
+  netscape: require('../assets/netscape.png'),
+  node: require('../assets/node.png'),
   nuvem: require('../assets/nuvem.gif'),
   olhos: require('../assets/olhos.gif'),
   preocupado: require('../assets/preocupado.gif'),
   rasgando: require('../assets/rasgando.gif'),
+  react: require('../assets/react.png'),
   sem_framework: require('../assets/sem-framework.gif'),
   tedio: require('../assets/tedio.gif'),
   televisao: require('../assets/televisao.gif'),
   tenso: require('../assets/tenso.gif'),
   terremoto: require('../assets/terremoto.gif'),
+  tim: require('../assets/tim.png'),
+  v8: require('../assets/v8.png'),
   vaso: require('../assets/vaso.gif'),
+  vue: require('../assets/vue.png'),
+  www: require('../assets/www.jpg'),
   logo: require('../assets/formidable-logo.svg')
 };
 
@@ -96,9 +118,17 @@ export default class Presentation extends Component {
         transitionDuration={500}
       >
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="black">
-            JavaScript
-          </Heading>
+          <Layout>
+            <Fill>
+              <Image src={images.javascript.replace('/', '')} height="380px" width="400px" padding="50px" />
+            </Fill>
+            <Fill>
+              <Heading size={1} fit caps lineHeight={1} textColor="black">
+                Java - <br />
+                Script
+              </Heading>
+            </Fill>
+          </Layout>
           <Text textSize="1.3em" textColor="white" margin="auto auto 30px" bold>
             uma apresentação sobre javascript
           </Text>
@@ -110,10 +140,9 @@ export default class Presentation extends Component {
           </Text>
           <Link href="https://github.com/luckened/js-presentation">
             <Text textSize="0.5em" bold textColor="black">
-              repo no github (clica aqui)
+              repo no github
             </Text>
           </Link>
-          <Notes>Let's get started!</Notes>
         </Slide>
 
 
@@ -140,60 +169,394 @@ export default class Presentation extends Component {
         >
           <Image src={images.abobrinha.replace('/', '')} margin="0px auto 40px" />
           <Heading size={2} caps fit textColor="primary" textFont="primary">
-            Wait what?
+            Introdução
           </Heading>
-          <Notes>
-            You can even put notes on your slide. How awesome is that?
-          </Notes>
         </Slide>
 
+        <Slide transition={['zoom', 'fade']} bgColor="primary">
+          <Heading caps fit size={1} textColor="tertiary">
+            Introdução
+          </Heading>
+        </Slide>
+
+        <Slide transition={['zoom', 'fade']} bgColor="primary">
+          <Heading caps fit size={1} textColor="tertiary">
+            Introdução
+          </Heading>
+          <Image src={images.televisao.replace('/', '')} />
+        </Slide>
 
         <Slide
-          transitionIn={['zoom', 'fade']}
-          transitionOut={['slide', 'fade']}
-          bgColor="primary"
-        >
-          <CodePane
-            lang="jsx"
-            source={require('raw-loader!../assets/deck.example')}
-            margin="20px auto"
-            overflow="overflow"
-          />
-          <Notes>
-            <List>
-              <ListItem>talk about that</ListItem>
-              <ListItem>and that</ListItem>
-              <ListItem>and then this</ListItem>
-            </List>
-          </Notes>
-        </Slide>
-        <Slide goTo={3}>
-          <ComponentPlayground theme="dark" />
-        </Slide>
-
-
-        <Slide
+          /*INTRODUCAO/HISTORIA PT1*/
           transition={['slide']}
-          bgImage={images.city.replace('/', '')}
+          bgColor="blue"
           bgDarken={0.75}
         >
-          <Appear fid="1">
-            <Heading size={1} caps fit textColor="primary">
-              Full Width
-            </Heading>
-          </Appear>
-          <Appear fid="2">
-            <Heading size={1} caps fit textColor="tertiary">
-              Adjustable Darkness
-            </Heading>
-          </Appear>
-          <Appear fid="3">
-            <Heading size={1} caps fit textColor="primary">
-              Background Imagery
+          <Text textSize="4.3em" textColor="black" margin="auto auto 30px" bold>
+            Timeline:
+          </Text>
+          <Layout>
+
+            <Appear fid="1">
+              <Fill>
+                <Image src={images.eisenhower.replace('/', '')} margin="0px 0px 0px 0px" />
+              </Fill>
+            </Appear>
+
+            <Appear fid="2">
+              <Fill>
+                <Image src={images.darpa.replace('/', '')} margin="0px 0px 0px 0px" />
+              </Fill>
+            </Appear>
+
+            <Appear fid="3">
+              <Fill>
+                <Image src={images.arpanet.replace('/', '')} margin="0px 0px 0px 0px" />
+              </Fill>
+            </Appear>
+
+            <Appear fid="4">
+              <Fill>
+                <Image src={images.tim.replace('/', '')} margin="0px 0px 0px 0px" />
+              </Fill>
+            </Appear>
+
+            <Appear fid="5">
+              <Fill>
+                <Image src={images.www.replace('/', '')} margin="0px 10px 0px 0px" />
+              </Fill>
+            </Appear>
+          </Layout>
+
+          <Layout>
+            <Appear fid="6">
+              <Fill>
+                <Image src={images.html.replace('/', '')} height="150px" width="150px" margin="0px 10px 0px 0px" />
+              </Fill>
+            </Appear>
+
+            <Appear fid="7">
+              <Fill>
+                <Image src={images.mosaic.replace('/', '')} height="150px" margin="0px 10px 0px 0px" />
+              </Fill>
+            </Appear>
+
+            <Appear fid="8">
+              <Fill>
+                <Image src={images.jim.replace('/', '')} height="175px" width="200px" margin="0px 0px 0px 0px" />
+              </Fill>
+            </Appear>
+
+            <Appear fid="9">
+              <Fill>
+                <Image src={images.netscape.replace('/', '')} margin="0px 0px 0px 0px" />
+              </Fill>
+            </Appear>
+
+          </Layout>
+
+          <Appear fid="10">
+            <Heading size={3} caps fit textColor="primary">
+              Finalmente...
             </Heading>
           </Appear>
         </Slide>
 
+        <SlideSet
+          style={{ backgroundColor: 'blue', border: '10px solid cyan' }}
+        >
+          <Slide /*HISTORIA PT2*/ transition={['fade']} textColor="tertiary">
+            <List>
+              <Layout>
+                <Fill>
+                  <Appear>
+                    <ListItem>Brendan Eich</ListItem>
+                  </Appear>
+                  <Appear>
+                    <Image src={images.brendan.replace('/', '')} height="200px" width="200px" margin="0px 0px 0px" />
+                  </Appear>
+                </Fill>
+
+                <Fill>
+                  <Appear>
+                    <ListItem>Mocha / LiveScript</ListItem>
+                  </Appear>
+
+                  <Appear>
+                    <Image src={images.mocha.replace('/', '')} height="200px" width="200px" margin="0px 0px 0px" />
+                  </Appear>
+                </Fill>
+              </Layout>
+
+              <Layout>
+                <Fill>
+                  <Appear>
+                    <ListItem>Maio de 1995 - Java estava fazendo muito sucesso na época..</ListItem>
+                  </Appear>
+
+                  <Appear>
+                    <Image src={images.java.replace('/', '')} height="200px" width="300px" margin="0px 0px 0px" />
+                  </Appear>
+                </Fill>
+
+                <Fill>
+                  <Appear>
+                    <ListItem>~piggyback~ Dezembro de 1995 - Nasce o JavaScript</ListItem>
+                  </Appear>
+
+                  <Appear>
+                    <Image src={images.javascript.replace('/', '')} height="200px" width="200px" margin="0px 0px 0px" />
+                  </Appear>
+                </Fill>
+              </Layout>
+
+            </List>
+          </Slide>
+
+          <Slide /*HISTORIA PT3*/ transition={['fade']} textColor="tertiary">
+            <List>
+              <Layout>
+                <Fill>
+                  <Appear>
+                    <ListItem>1997 - Padronização da linguagem</ListItem>
+                  </Appear>
+                  <Appear>
+                    <Image src={images.ecma.replace('/', '')} height="100px" width="350px" />
+                  </Appear>
+                </Fill>
+
+                <Fill>
+                  <Appear>
+                    <ListItem>2002 - treta com a Microsoft e falência da Netscape: Mozilla e o Firefox</ListItem>
+                  </Appear>
+
+                  <Appear>
+                    <Image src={images.firefox.replace('/', '')} height="200px" width="200px" />
+                  </Appear>
+                </Fill>
+              </Layout>
+
+              <Layout>
+                <Fill>
+                  <Appear>
+                    <ListItem>2008 - Google Chrome</ListItem>
+                  </Appear>
+
+                  <Appear>
+                    <Image src={images.chrome.replace('/', '')} height="200px" width="200px" />
+                  </Appear>
+                </Fill>
+
+                <Fill>
+                  <Appear>
+                    <ListItem>2009 - Motor V8: código Just-In-Time<br />feito em C++</ListItem>
+                  </Appear>
+
+                  <Appear>
+                    <Image src={images.v8.replace('/', '')} height="175px" width="225px" />
+                  </Appear>
+                </Fill>
+
+                <Fill>
+                  <Appear>
+                    <ListItem>2010 - Node.js</ListItem>
+                  </Appear>
+
+                  <Appear>
+                    <Image src={images.node.replace('/', '')} height="200px" width="225px" />
+                  </Appear>
+                </Fill>
+              </Layout>
+
+            </List>
+          </Slide>
+
+
+          <Slide /*INTRODUCAO AS FRAMEWORKS*/ transition={['fade']} bgColor="primary">
+            <Layout>
+              <Fill>
+                <Heading size={1} fit textColor="secondary">
+                  sem framework
+                </Heading>
+                <Image src={images.sem_framework.replace('/', '')} />
+              </Fill>
+            </Layout>
+          </Slide>
+
+          <Slide transition={['fade', 'zoom']} bgColor="primary">
+            <Layout>
+              <Fill>
+                <Heading size={1} fit textColor="secondary">
+                  com framework
+                </Heading>
+                <Image src={images.com_framework.replace('/', '')} />
+              </Fill>
+            </Layout>
+          </Slide>
+
+        </SlideSet>
+
+        <Slide /*FRAMEWORKS*/
+          bgImage={images.comendo.replace('/', '')}
+          bgDarken={0.75}
+          transition={['fade']} textColor="tertiary">
+
+          <List>
+            <Layout>
+              <Fill>
+                <Appear>
+                  <ListItem>Angular</ListItem>
+                </Appear>
+                <Appear>
+                  <Image src={images.angular.replace('/', '')} height="200px" width="200px" />
+                </Appear>
+              </Fill>
+
+              <Fill>
+                <Appear>
+                  <ListItem>Electron</ListItem>
+                </Appear>
+
+                <Appear>
+                  <Image src={images.electron.replace('/', '')} height="200px" width="200px" />
+                </Appear>
+              </Fill>
+
+
+            </Layout>
+
+            <Layout>
+
+              <Fill>
+                <Appear>
+                  <ListItem>React</ListItem>
+                </Appear>
+
+                <Appear>
+                  <Image src={images.react.replace('/', '')} height="200px" width="200px" />
+                </Appear>
+              </Fill>
+
+
+              <Fill>
+                <Appear>
+                  <ListItem>Vue</ListItem>
+                </Appear>
+
+                <Appear>
+                  <Image src={images.vue.replace('/', '')} height="175px" width="225px" />
+                </Appear>
+              </Fill>
+            </Layout>
+
+          </List>
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="black">
+          <BlockQuote>
+            <Quote textSize="0.8em">JavaScript (sometimes abbreviated JS) is a prototype-based scripting language that is dynamic, weakly typed and has first-class functions. It is a multi-paradigm language, supporting object-oriented, imperative, and functional programming styles.</Quote>
+            <Cite>Wikipedia</Cite>
+          </BlockQuote>
+        </Slide>
+
+        <SlideSet
+          style={{ backgroundColor: 'blue', border: '10px solid cyan' }}
+        >
+
+          <Slide transition={['zoom', 'fade']} bgColor="primary">
+            <Heading caps fit size={1} textColor="tertiary">
+              Características
+            </Heading>
+            <Image src={images.abobrinha.replace('/', '')} />
+          </Slide>
+
+
+          <Slide transition={['fade']} textColor="tertiary">
+            <Heading textColor="primary">
+              alguns tópicos:
+            </Heading>
+
+            <Text></Text>
+            <List>
+              <Appear>
+                <ListItem bulletStyle="classicCheck">Interpretada</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem bulletStyle="classicCheck">Multi-paradigma</ListItem>
+              </Appear>
+              <List>
+                <Appear>
+                  <ListItem bulletStyle="arrow" textSize="0.7em">Orientada a objetos (e.g. componente classe)</ListItem>
+                </Appear>
+                <Appear>
+                  <ListItem bulletStyle="arrow" textSize="0.7em">Orientada a eventos (e.g. clique do mouse)</ListItem>
+                </Appear>
+                <Appear>
+                  <ListItem bulletStyle="arrow" textSize="0.7em">Funcional</ListItem>
+                </Appear>
+                <Appear>
+                  <ListItem bulletStyle="arrow" textSize="0.7em">Imperativa</ListItem>
+                </Appear>
+              </List>
+              <Appear>
+                <ListItem bulletStyle="classicCheck">Tipagem fraca e dinâmica</ListItem>
+              </Appear>
+            </List>
+          </Slide>
+
+          <Slide transition={['zoom', 'fade']} bgColor="primary">
+            <Heading caps fit size={1} textColor="tertiary">
+              Peculiaridades
+            </Heading>
+            <Image src={images.dinheiro.replace('/', '')} />
+          </Slide>
+
+          <Slide transition={['fade']}>
+            <Text textSize="1.2em">
+              Operadores or e and
+            </Text>
+            <Markdown>
+              {`        
+              function soma ( a, b ) {
+                b = b || 0;
+                return a + b;
+              }
+              soma( 3 ); // 3
+              `}
+            </Markdown>
+
+            <Markdown>
+              {`
+              "gato" && "cachorro" // "cachorro"
+              false && 10 // false
+              `}
+            </Markdown>
+
+            <Text textSize="1.2em">
+              Strings e verdades
+            </Text>
+            <Markdown>
+              {`
+              a = '10'
+              b = "10"
+              c = \`10\`
+              d = 10
+              `}
+            </Markdown>
+
+
+          </Slide>
+
+
+
+
+          <Slide transition={['slide']} bgColor="primary">
+            <Heading size={1} caps fit textColor="tertiary">
+              Your presentations are interactive
+            </Heading>
+            <Interactive />
+          </Slide>
+        </SlideSet>
 
         <Slide transition={['slide']}>
           <Anim
@@ -253,7 +616,6 @@ export default class Presentation extends Component {
               </Heading>
             </div>
           </Anim>
-          <Notes>Much animation, very style</Notes>
         </Slide>
 
 
@@ -288,8 +650,9 @@ export default class Presentation extends Component {
               </select>
             )}
           />
-          <Notes>Doesn't work in export view, though</Notes>
         </Slide>
+
+
         <Slide
           transition={['slide']}
           bgDarken={0.75}
@@ -342,10 +705,6 @@ export default class Presentation extends Component {
               </Heading>
             </Fill>
           </Layout>
-          <Notes>
-            Use <code>layout</code> to <code>fill</code> or <code>fit</code>{' '}
-            your content
-          </Notes>
         </Slide>
         <Slide transition={['slide']} bgColor="black">
           <BlockQuote>
@@ -356,7 +715,7 @@ export default class Presentation extends Component {
 
 
         <Slide
-          transition={['spin', 'zoom']}
+          transition={['zoom']}
           bgColor="tertiary"
           controlColor="primary"
           progressColor="primary"
@@ -366,20 +725,20 @@ export default class Presentation extends Component {
           </Heading>
           <Markdown>
             {`
-  ![Markdown Logo](${images.markdown.replace('/', '')})
-
-  You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-  * Lists too!
-  * With ~~strikethrough~~ and _italic_
-  * And let's not forget **bold**
-  * Add some \`inline code\` to your sldes!
-            `}
+  ![Markdown Logo](${images.comendo.replace('/', '')})
+            
+              You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
+              * Lists too!
+              * With ~~strikethrough~~ and _italic_
+              * And let's not forget **bold**
+              * Add some \`inline code\` to your sldes!
+                        `}
           </Markdown>
-          <Notes>Who doesn't love markdown?</Notes>
         </Slide>
 
 
-        {MarkdownSlides`
+        {
+          MarkdownSlides`
 #### Create Multiple Slides in Markdown
 All the same tags and elements supported in <Markdown /> are supported in MarkdownSlides.
 ---
@@ -400,7 +759,6 @@ const myCode = (is, great) => 'for' + 'sharing';
           <Heading caps fit size={1} textColor="secondary">
             Combinable Transitions
           </Heading>
-          <Notes>So smooth</Notes>
         </Slide>
 
 
@@ -410,7 +768,7 @@ const myCode = (is, great) => 'for' + 'sharing';
           <Slide transition={['fade']} textColor="tertiary">
             <List>
               <Appear>
-                <ListItem>Inline style based theme system</ListItem>
+                <Image src={images.bug.replace('/', '')} height="100px" width="300px" margin="0px 0px 0px" />
               </Appear>
               <Appear>
                 <ListItem>Autofit text</ListItem>
@@ -438,6 +796,8 @@ const myCode = (is, great) => 'for' + 'sharing';
             <Interactive />
           </Slide>
         </SlideSet>
+
+
         <Slide transition={['slide']} bgColor="primary">
           <Heading
             size={4}
@@ -486,7 +846,6 @@ const myCode = (is, great) => 'for' + 'sharing';
               </TableBody>
             </Table>
           </Layout>
-          <Notes>Hard to find cities without any pizza</Notes>
         </Slide>
         <Slide transition={['spin', 'slide']} bgColor="tertiary">
           <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
@@ -495,9 +854,8 @@ const myCode = (is, great) => 'for' + 'sharing';
           <Link href="https://www.formidable.com">
             <Image width="100%" src={images.logo} />
           </Link>
-          <Notes>Check us out → https://www.formidable.com</Notes>
         </Slide>
-      </Deck>
+      </Deck >
     );
   }
 }
