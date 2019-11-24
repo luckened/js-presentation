@@ -37,10 +37,32 @@ import Interactive from '../assets/interactive';
 require('normalize.css');
 
 const images = {
+  abobrinha: require('../assets/abobrinha.gif'),
+  balao: require('../assets/balao.gif'),
+  bug: require('../assets/bug.gif'),
   city: require('../assets/city.jpg'),
+  com_framework: require('../assets/com-framework.gif'),
+  comendo: require('../assets/comendo.gif'),
+  dente: require('../assets/dente.gif'),
+  dinheiro: require('../assets/dinheiro.gif'),
+  hipnose: require('../assets/hipnose.gif'),
   kat: require('../assets/kat.gif'),
-  logo: require('../assets/formidable-logo.svg'),
-  markdown: require('../assets/markdown.png')
+  lava_olhos: require('../assets/lava-olhos.gif'),
+  lingua: require('../assets/lingua.gif'),
+  macarena: require('../assets/macarena.gif'),
+  markdown: require('../assets/markdown.png'),
+  monstro: require('../assets/monstro.gif'),
+  nuvem: require('../assets/nuvem.gif'),
+  olhos: require('../assets/olhos.gif'),
+  preocupado: require('../assets/preocupado.gif'),
+  rasgando: require('../assets/rasgando.gif'),
+  sem_framework: require('../assets/sem-framework.gif'),
+  tedio: require('../assets/tedio.gif'),
+  televisao: require('../assets/televisao.gif'),
+  tenso: require('../assets/tenso.gif'),
+  terremoto: require('../assets/terremoto.gif'),
+  vaso: require('../assets/vaso.gif'),
+  logo: require('../assets/formidable-logo.svg')
 };
 
 preloader(images);
@@ -75,24 +97,26 @@ export default class Presentation extends Component {
       >
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="black">
-            Spectacle
+            JavaScript
           </Heading>
-          <Heading size={1} fit caps>
-            A ReactJS Presentation Library
-          </Heading>
+          <Text textSize="1.3em" textColor="white" margin="auto auto 30px" bold>
+            uma apresentação sobre javascript
+          </Text>
           <Heading size={1} fit caps textColor="black">
-            Where You Can Write Your Decks In JSX
+            feita em javascript
           </Heading>
-          <Link href="https://github.com/FormidableLabs/spectacle">
-            <Text bold caps textColor="tertiary">
-              View on Github
+          <Text textSize="1.5em" textColor="white" bold>
+            por lucca e sávio
+          </Text>
+          <Link href="https://github.com/luckened/js-presentation">
+            <Text textSize="0.5em" bold textColor="black">
+              repo no github (clica aqui)
             </Text>
           </Link>
-          <Text textSize="1.5em" margin="20px 0px 0px" bold>
-            Hit Your Right Arrow To Begin!
-          </Text>
           <Notes>Let's get started!</Notes>
         </Slide>
+
+
         <Slide
           onActive={slideIndex => {
             console.info(`Viewing slide index: ${slideIndex}.`); // eslint-disable-line no-console
@@ -114,7 +138,7 @@ export default class Presentation extends Component {
           ]}
           bgColor="black"
         >
-          <Image src={images.kat.replace('/', '')} margin="0px auto 40px" />
+          <Image src={images.abobrinha.replace('/', '')} margin="0px auto 40px" />
           <Heading size={2} caps fit textColor="primary" textFont="primary">
             Wait what?
           </Heading>
@@ -122,6 +146,8 @@ export default class Presentation extends Component {
             You can even put notes on your slide. How awesome is that?
           </Notes>
         </Slide>
+
+
         <Slide
           transitionIn={['zoom', 'fade']}
           transitionOut={['slide', 'fade']}
@@ -144,6 +170,8 @@ export default class Presentation extends Component {
         <Slide goTo={3}>
           <ComponentPlayground theme="dark" />
         </Slide>
+
+
         <Slide
           transition={['slide']}
           bgImage={images.city.replace('/', '')}
@@ -165,6 +193,8 @@ export default class Presentation extends Component {
             </Heading>
           </Appear>
         </Slide>
+
+
         <Slide transition={['slide']}>
           <Anim
             onAnim={(forwards, animIndex) => {
@@ -225,6 +255,8 @@ export default class Presentation extends Component {
           </Anim>
           <Notes>Much animation, very style</Notes>
         </Slide>
+
+
         <Slide>
           <Heading size={2} textColor="secondary" margin="0.25em">
             Mix it up!
@@ -321,6 +353,8 @@ export default class Presentation extends Component {
             <Cite>Ken Wheeler</Cite>
           </BlockQuote>
         </Slide>
+
+
         <Slide
           transition={['spin', 'zoom']}
           bgColor="tertiary"
@@ -343,6 +377,8 @@ export default class Presentation extends Component {
           </Markdown>
           <Notes>Who doesn't love markdown?</Notes>
         </Slide>
+
+
         {MarkdownSlides`
 #### Create Multiple Slides in Markdown
 All the same tags and elements supported in <Markdown /> are supported in MarkdownSlides.
@@ -366,6 +402,8 @@ const myCode = (is, great) => 'for' + 'sharing';
           </Heading>
           <Notes>So smooth</Notes>
         </Slide>
+
+
         <SlideSet
           style={{ backgroundColor: 'blue', border: '10px solid cyan' }}
         >
@@ -391,6 +429,8 @@ const myCode = (is, great) => 'for' + 'sharing';
               </Appear>
             </List>
           </Slide>
+
+
           <Slide transition={['slide']} bgColor="primary">
             <Heading size={1} caps fit textColor="tertiary">
               Your presentations are interactive
