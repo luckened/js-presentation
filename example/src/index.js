@@ -504,6 +504,50 @@ export default class Presentation extends Component {
             </List>
           </Slide>
 
+          <Slide transition={['fade', 'zoom']} textColor="tertiary">
+            <Heading textColor="primary">
+              mais tópicos:
+            </Heading>
+
+            <Text></Text>
+            <List>
+              <Appear>
+                <ListItem bulletStyle="classicCheck">Tipos primitivos</ListItem>
+              </Appear>
+              <List>
+                <Appear>
+                  <ListItem bulletStyle="arrow" textSize="0.7em">number</ListItem>
+                </Appear>
+                <Appear>
+                  <ListItem bulletStyle="arrow" textSize="0.7em">string</ListItem>
+                </Appear>
+                <Appear>
+                  <ListItem bulletStyle="arrow" textSize="0.7em">boolean</ListItem>
+                </Appear>
+              </List>
+              <Appear>
+                <ListItem bulletStyle="classicCheck">Tudo é objeto</ListItem>
+              </Appear>
+              <Appear>
+                <ListItem bulletStyle="classicCheck">Funções são objetos de primeira classe</ListItem>
+              </Appear>
+              <List>
+                <Appear>
+                  <ListItem bulletStyle="arrow" textSize="0.7em">podem ter métodos e propriedades</ListItem>
+                </Appear>
+                <Appear>
+                  <ListItem bulletStyle="arrow" textSize="0.7em">podem ser atribuídas às variáveis</ListItem>
+                </Appear>
+                <Appear>
+                  <ListItem bulletStyle="arrow" textSize="0.7em">podem ser passadas como parâmetro/serem retorno de outras funções</ListItem>
+                </Appear>
+                <Appear>
+                  <ListItem bulletStyle="arrow" textSize="0.7em">criadas em tempo de execução</ListItem>
+                </Appear>
+              </List>
+            </List>
+          </Slide>
+
           <Slide transition={['zoom', 'fade']} bgColor="primary">
             <Heading caps fit size={1} textColor="tertiary">
               Peculiaridades
@@ -512,8 +556,11 @@ export default class Presentation extends Component {
           </Slide>
 
           <Slide transition={['fade']}>
+            <Text textSize="1.8em" textColor="primary">
+              peculiaridades
+            </Text>
             <Text textSize="1.2em">
-              Operadores or e and
+              operadores or e and
             </Text>
             <Markdown>
               {`        
@@ -533,7 +580,7 @@ export default class Presentation extends Component {
             </Markdown>
 
             <Text textSize="1.2em">
-              Strings e verdades
+              declaração de strings e testes de igualdade
             </Text>
             <Markdown>
               {`
@@ -541,13 +588,64 @@ export default class Presentation extends Component {
               b = "10"
               c = \`10\`
               d = 10
+              a == b  // ?
+              a == c  // ?
+              a == d  // ?
+              a === d // ?
+              b != d  // ?
+              c !== d  // ?
               `}
             </Markdown>
-
-
           </Slide>
 
 
+          <Slide transition={['fade']}>
+            <Text textSize="1.8em" textColor="primary">
+              let, var e const
+            </Text>
+            <Text textSize="1.2em">
+              const
+            </Text>
+            <Markdown>
+              {`        
+              void function(){ 
+                const mensagem = 'salve'; 
+                console.log(mensagem); // salve
+                mensagem = 'savinho';
+              }();
+              // erro na atribuicao
+              `}
+            </Markdown>
+            <Text textSize="1.2em">
+              var e let: problema do escopo
+            </Text>
+            <Markdown>
+              {`
+              var exibeMensagem = function() {
+                if(true) { // escopo isolado dentro da funcao
+                    var escopoFuncao = 'disney'; 
+                    let escopoBloco = 'savinho';
+                    console.log(escopoBloco); // savinho 
+                }
+                console.log(escopoFuncao); // disney 
+                console.log(escopoBloco); // erro na execucao 
+              }
+              `}
+            </Markdown>
+
+            <Text textSize="1.2em">
+              hoisting (elevar/içar)
+            </Text>
+            <Markdown>
+              {`
+              void function(){ 
+                console.log(mensagem); 
+              }();
+              var mensagem = 'salve';
+              //executa normal, saida: undefined
+              `}
+            </Markdown>
+          </Slide>
 
 
           <Slide transition={['slide']} bgColor="primary">
