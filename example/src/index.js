@@ -167,7 +167,7 @@ export default class Presentation extends Component {
           ]}
           bgColor="black"
         >
-          <Image src={images.abobrinha.replace('/', '')} margin="0px auto 40px" />
+          <Image src={images.televisao.replace('/', '')} margin="0px auto 40px" />
           <Heading size={2} caps fit textColor="primary" textFont="primary">
             Introdução
           </Heading>
@@ -175,24 +175,16 @@ export default class Presentation extends Component {
 
         <Slide transition={['zoom', 'fade']} bgColor="primary">
           <Heading caps fit size={1} textColor="tertiary">
-            Introdução
           </Heading>
-        </Slide>
-
-        <Slide transition={['zoom', 'fade']} bgColor="primary">
-          <Heading caps fit size={1} textColor="tertiary">
-            Introdução
-          </Heading>
-          <Image src={images.televisao.replace('/', '')} />
         </Slide>
 
         <Slide
           /*INTRODUCAO/HISTORIA PT1*/
-          transition={['slide']}
-          bgColor="blue"
+          bgImage={images.nuvem.replace('/', '')}
           bgDarken={0.75}
-        >
-          <Text textSize="4.3em" textColor="black" margin="auto auto 30px" bold>
+          transition={['fade']} textColor="tertiary">
+          >
+          <Text textSize="4.3em" textColor="blue" margin="auto auto 30px" bold>
             Timeline:
           </Text>
           <Layout>
@@ -265,7 +257,11 @@ export default class Presentation extends Component {
         <SlideSet
           style={{ backgroundColor: 'blue', border: '10px solid cyan' }}
         >
-          <Slide /*HISTORIA PT2*/ transition={['fade']} textColor="tertiary">
+          <Slide /*HISTORIA PT2*/
+            transition={['fade']}
+            textColor="tertiary"
+            bgImage={images.lingua.replace('/', '')}
+            bgDarken={0.25}>
             <List>
               <Layout>
                 <Fill>
@@ -313,7 +309,11 @@ export default class Presentation extends Component {
             </List>
           </Slide>
 
-          <Slide /*HISTORIA PT3*/ transition={['fade']} textColor="tertiary">
+          <Slide /*HISTORIA PT3*/
+            transition={['fade']}
+            textColor="tertiary"
+            bgImage={images.tedio.replace('/', '')}
+            bgDarken={0.75}>
             <List>
               <Layout>
                 <Fill>
@@ -370,87 +370,9 @@ export default class Presentation extends Component {
 
             </List>
           </Slide>
-
-
-          <Slide /*INTRODUCAO AS FRAMEWORKS*/ transition={['fade']} bgColor="primary">
-            <Layout>
-              <Fill>
-                <Heading size={1} fit textColor="secondary">
-                  sem framework
-                </Heading>
-                <Image src={images.sem_framework.replace('/', '')} />
-              </Fill>
-            </Layout>
-          </Slide>
-
-          <Slide transition={['fade', 'zoom']} bgColor="primary">
-            <Layout>
-              <Fill>
-                <Heading size={1} fit textColor="secondary">
-                  com framework
-                </Heading>
-                <Image src={images.com_framework.replace('/', '')} />
-              </Fill>
-            </Layout>
-          </Slide>
-
         </SlideSet>
 
-        <Slide /*FRAMEWORKS*/
-          bgImage={images.comendo.replace('/', '')}
-          bgDarken={0.75}
-          transition={['fade']} textColor="tertiary">
 
-          <List>
-            <Layout>
-              <Fill>
-                <Appear>
-                  <ListItem>Angular</ListItem>
-                </Appear>
-                <Appear>
-                  <Image src={images.angular.replace('/', '')} height="200px" width="200px" />
-                </Appear>
-              </Fill>
-
-              <Fill>
-                <Appear>
-                  <ListItem>Electron</ListItem>
-                </Appear>
-
-                <Appear>
-                  <Image src={images.electron.replace('/', '')} height="200px" width="200px" />
-                </Appear>
-              </Fill>
-
-
-            </Layout>
-
-            <Layout>
-
-              <Fill>
-                <Appear>
-                  <ListItem>React</ListItem>
-                </Appear>
-
-                <Appear>
-                  <Image src={images.react.replace('/', '')} height="200px" width="200px" />
-                </Appear>
-              </Fill>
-
-
-              <Fill>
-                <Appear>
-                  <ListItem>Vue</ListItem>
-                </Appear>
-
-                <Appear>
-                  <Image src={images.vue.replace('/', '')} height="175px" width="225px" />
-                </Appear>
-              </Fill>
-            </Layout>
-
-          </List>
-        </Slide>
 
         <Slide transition={['slide']} bgColor="black">
           <BlockQuote>
@@ -563,19 +485,23 @@ export default class Presentation extends Component {
               operadores or e and
             </Text>
             <Markdown>
-              {`        
-              function soma ( a, b ) {
-                b = b || 0;
-                return a + b;
-              }
-              soma( 3 ); // 3
+              {`
+\`\`\`js
+function soma ( a, b ) {
+  b = b || 0;
+  return a + b;
+}
+soma( 3 ); // 3
+\`\`\`
               `}
             </Markdown>
 
             <Markdown>
               {`
-              "gato" && "cachorro" // "cachorro"
-              false && 10 // false
+\`\`\`js
+"gato" && "cachorro" // "cachorro"
+false && 10 // false
+\`\`\`      
               `}
             </Markdown>
 
@@ -584,19 +510,24 @@ export default class Presentation extends Component {
             </Text>
             <Markdown>
               {`
-              a = '10'
-              b = "10"
-              c = \`10\`
-              d = 10
-              a == b  // ?
-              a == c  // ?
-              a == d  // ?
-              a === d // ?
-              b != d  // ?
-              c !== d  // ?
+\`\`\`js
+a = '10'
+b = "10"
+c = \`10\`
+d = 10
+a == b  // ?
+a == c  // ?
+a == d  // ?
+a === d // ?
+b != d  // ?
+c !== d  // ?
+\`\`\`
               `}
             </Markdown>
           </Slide>
+
+
+
 
 
           <Slide transition={['fade']}>
@@ -607,13 +538,15 @@ export default class Presentation extends Component {
               const
             </Text>
             <Markdown>
-              {`        
-              void function(){ 
-                const mensagem = 'salve'; 
-                console.log(mensagem); // salve
-                mensagem = 'savinho';
-              }();
-              // erro na atribuicao
+              {`
+\`\`\`js
+void function(){ 
+  const mensagem = 'salve'; 
+  console.log(mensagem); // salve
+  mensagem = 'savinho';
+}();
+// erro na atribuicao
+\`\`\`
               `}
             </Markdown>
             <Text textSize="1.2em">
@@ -621,28 +554,59 @@ export default class Presentation extends Component {
             </Text>
             <Markdown>
               {`
-              var exibeMensagem = function() {
-                if(true) { // escopo isolado dentro da funcao
-                    var escopoFuncao = 'disney'; 
-                    let escopoBloco = 'savinho';
-                    console.log(escopoBloco); // savinho 
-                }
-                console.log(escopoFuncao); // disney 
-                console.log(escopoBloco); // erro na execucao 
-              }
+\`\`\`js
+var exibeMensagem = function() {
+  if(true) { // escopo isolado dentro da funcao
+      var escopoFuncao = 'disney'; 
+      let escopoBloco = 'savinho';
+      console.log(escopoBloco); // savinho 
+  }
+  console.log(escopoFuncao); // disney 
+  console.log(escopoBloco); // erro na execucao 
+}
+\`\`\`
               `}
             </Markdown>
+          </Slide>
 
+          <Slide transition={['fade']}>
+            <Text textSize="1.8em" textColor="primary">
+              dando vida ao html
+            </Text>
             <Text textSize="1.2em">
-              hoisting (elevar/içar)
+              canvas
             </Text>
             <Markdown>
               {`
-              void function(){ 
-                console.log(mensagem); 
-              }();
-              var mensagem = 'salve';
-              //executa normal, saida: undefined
+\`\`\`js
+function animate() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < maxParticles; i++) {
+      let particle = particles[i];
+      context.fillRect(particle.x - particleSize / 2, particle.y - particleSize / 2, particleSize, particleSize);
+      for (let j = 0; j < maxParticles; j++) {
+          if (i != j) {
+              let particle2 = particles[j];
+              let distanceX = Math.abs(particle.x - particle2.x);
+              let distanceY = Math.abs(particle.y - particle2.y);
+              if (distanceX < threshold && distanceY < threshold) {
+                  context.lineWidth = ((threshold * 2) - (distanceX + distanceY)) / 50;
+                  let color = 200 - Math.floor(distanceX + distanceY);
+                  context.strokeStyle = 'rgb(' + color + ',' + color + ',' + color + ')';
+                  line(particle, particle2);
+              }
+          }
+      }
+      particle.x = particle.x + particle.vx;
+      particle.y = particle.y + particle.vy;
+      if (particle.x > canvas.width - particleSize || particle.x < particleSize)
+          particle.vx = -particle.vx;
+      if (particle.y > canvas.height - particleSize || particle.y < particleSize)
+          particle.vy = -particle.vy;
+  }
+  window.requestAnimationFrame(animate);
+}
+\`\`\`
               `}
             </Markdown>
           </Slide>
@@ -650,11 +614,89 @@ export default class Presentation extends Component {
 
           <Slide transition={['slide']} bgColor="primary">
             <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
+              Clique no botão
             </Heading>
             <Interactive />
           </Slide>
         </SlideSet>
+
+
+        <Slide /*INTRODUCAO AS FRAMEWORKS*/ transition={['fade']} bgColor="primary">
+          <Layout>
+            <Fill>
+              <Heading size={1} fit textColor="secondary">
+                sem framework
+                </Heading>
+              <Image src={images.sem_framework.replace('/', '')} />
+            </Fill>
+          </Layout>
+        </Slide>
+
+        <Slide transition={['fade', 'zoom']} bgColor="primary">
+          <Layout>
+            <Fill>
+              <Heading size={1} fit textColor="secondary">
+                com framework
+                </Heading>
+              <Image src={images.com_framework.replace('/', '')} />
+            </Fill>
+          </Layout>
+        </Slide>
+
+        <Slide /*FRAMEWORKS*/
+          bgImage={images.comendo.replace('/', '')}
+          bgDarken={0.75}
+          transition={['fade']} textColor="tertiary">
+
+          <List>
+            <Layout>
+              <Fill>
+                <Appear>
+                  <ListItem>Angular</ListItem>
+                </Appear>
+                <Appear>
+                  <Image src={images.angular.replace('/', '')} height="200px" width="200px" />
+                </Appear>
+              </Fill>
+
+              <Fill>
+                <Appear>
+                  <ListItem>Electron</ListItem>
+                </Appear>
+
+                <Appear>
+                  <Image src={images.electron.replace('/', '')} height="200px" width="200px" />
+                </Appear>
+              </Fill>
+            </Layout>
+
+            <Layout>
+              <Fill>
+                <Appear>
+                  <ListItem>React</ListItem>
+                </Appear>
+
+                <Appear>
+                  <Image src={images.react.replace('/', '')} height="200px" width="200px" />
+                </Appear>
+              </Fill>
+
+              <Fill>
+                <Appear>
+                  <ListItem>Vue</ListItem>
+                </Appear>
+
+                <Appear>
+                  <Image src={images.vue.replace('/', '')} height="175px" width="225px" />
+                </Appear>
+              </Fill>
+            </Layout>
+
+          </List>
+        </Slide>
+
+
+
 
         <Slide transition={['slide']}>
           <Anim
